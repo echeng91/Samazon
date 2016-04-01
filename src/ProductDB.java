@@ -64,4 +64,29 @@ insert into products (pid, pname, pdescription, pprice, pimgurl) values (7, 'Leo
 insert into products (pid, pname, pdescription, pprice, pimgurl) values (8, 'kale', 'Healthy leafy veggie', 5, 'http://cdn-img.health.com/sites/default/files/migration/img/web/2013/02/slides/easy-kale-recipes-400x400.jpg');
 insert into products (pid, pname, pdescription, pprice, pimgurl) values (9, 'carrots', 'Orange vegetable', 5, 'https://plus.maths.org/content/sites/plus.maths.org/files/articles/2011/paraconsistency/carrot.jpg');
 insert into products (pid, pname, pdescription, pprice, pimgurl) values (10, 'pizza', 'Turtles not included', 10, 'http://teenagemutantninjaturtles.com/wp-content/uploads/2013/03/Ninja-Turtles-TMNT-Pizza.jpg');
+
+
+create table users(
+userid int not null primary key,
+username varchar(50),
+userpass varchar(50)
+);
+
+insert into users(userid, username, userpass) values(1, 'Eric', 'abc123');
+
+
+create table orders(
+userid int,
+productid int, 
+quantity int,
+orderdate date
+);
+
+alter table orders add foreign key (userid) references users (userid);
+alter table orders add foreign key (productid) references products (pid);
+
+insert into products (pid, pname, pdescription, pprice, pimgurl) values (11, 'Bowser', 'King of Koopas', 100, 'http://vignette2.wikia.nocookie.net/villains/images/7/71/Bowser.png/revision/latest?cb=20131030220015');
+insert into products (pid, pname, pdescription, pprice, pimgurl) values (12, 'Kamek', 'Koopa Wizard', 50, 'http://vignette4.wikia.nocookie.net/mario/images/1/18/KamekNSMBW.png/revision/latest?cb=20120324234123');
+insert into products (pid, pname, pdescription, pprice, pimgurl) values (13, 'Squirtle', 'Turtle Pokemon', 50, 'http://cdn.bulbagarden.net/upload/thumb/3/39/007Squirtle.png/250px-007Squirtle.png');
+
 */

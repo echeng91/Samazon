@@ -6,8 +6,15 @@
 </head>
 <body>
 	<form action="ListProducts" method="post">
-		<input type="hidden" name="newmap" value="yes">
-		<input type="submit" value="Go to product list">
+		Username: <input type="text" name="user"><br> Password: <input
+			type="password" name="pass"><br> <input type="hidden"
+			name="newmap" value="yes"> <input type="hidden" name="login"
+			value="yes"> <input type="submit" value="Login">
+	</form>
+	<form action="ListProducts" method="post">
+		<input type="hidden" name="newmap" value="yes"> <input
+			type="hidden" name="login" value="no"> <input type="submit"
+			value="View Product List">
 	</form>
 </body>
 </html>
